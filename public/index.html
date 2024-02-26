@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landing 1</title>
+    <meta name="description" content="">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    
+<link rel="icon" href="/_static/logos/favicon.ico" sizes="any">
+<link rel="icon" href="/_static/logos/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/_static/logos/icon.png">
+<!-- the props -->
+<link rel="stylesheet" href="https://unpkg.com/open-props"/>
+<!-- optional imports that use the props -->
+<link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css"/>
+<link rel="stylesheet" href="https://unpkg.com/open-props/buttons.min.css"/>
+<!-- shoelace -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/components/button/button.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.14.0/cdn/components/drawer/drawer.js"></script>
+    <link rel="stylesheet" href="/_generated/global/styles.css"/>
+<link rel="stylesheet" href="/_generated/CYPgaj7AISt1f0Ch5JILN/styles.css"/>
+</head>
+
+<body>
+    <sl-drawer id="menu-drawer" label="Drawer" class="drawer-overview">
+        <div class="menu-navigation">
+            
+                
+            
+                
+            
+                
+                    
+                    <a href="/index">Home</a>
+                
+            
+                
+                    
+                    <a href="/what-is-page-mosaic">Documentation</a>
+                
+            
+                
+            
+        </div>
+        <sl-button id="menu-close-trigger" slot="footer" variant="primary">Close</sl-button>
+    </sl-drawer>
+    <header style="padding-bottom: 20px">
+        <div class="nav-panel">
+            <div>
+                <h4>Page Mosaic</h4>
+            </div>
+            <div class="navigation">
+                
+                    
+                
+                    
+                
+                    
+                        
+                        <a href="/index">Home</a>
+                    
+                
+                    
+                        
+                        <a href="/what-is-page-mosaic">Documentation</a>
+                    
+                
+                    
+                
+            </div>
+            <div>
+                <div class="menu">
+                    <sl-button id="menu-open-trigger" class="default" size="small" variant="default" outline="outline">Menu</sl-button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="content">
+        <div class="hero-content">
+            <h1>
+                Page Mosaic
+            </h1>
+            <h4>
+                A web platform for all
+            </h4>
+            <div>
+                <sl-button class="primary" variant="primary">Try for free now</sl-button>
+            </div>
+            <div>
+                <sl-button class="default" variant="default" size="small">Try for free</sl-button>
+            </div>
+            <div>
+                <sl-button class="ghost" variant="text" size="small">Try for free</sl-button>
+            </div>
+            <div>
+                <sl-button variant="text" size="large">Try for free</sl-button>
+            </div>
+        </div>
+        
+            
+                <section>
+                    <h3>
+                        Absolutely Flexible CMS!
+                    </h3>
+                    <img src="/_static/home-page/screen-1.webp" alt="Page Mosaic CMS Screenshot" />
+                </section>
+            
+        
+        <!-- <section class="full content" style="background-color: red">
+            <div>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+            <div class="popout">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+            <div class="feature">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+        </section> -->
+        <!-- <div class="feature">Test 34</div> -->
+    </main>
+    <footer>
+        <div class="footer-container"></div>
+    </footer>
+    <script>
+        function initializeMenu() {
+            const menuDrawer = document.querySelector('#menu-drawer');
+            const openButton = document.querySelector('#menu-open-trigger');
+            const closeButton = document.querySelector('#menu-close-trigger');
+            openButton.addEventListener('click', () => menuDrawer.show());
+            closeButton.addEventListener('click', () => menuDrawer.hide());
+        }
+        initializeMenu();
+    </script>
+</body>
+</html>
