@@ -1,0 +1,12 @@
+/* No Styles */
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+.link {
+    text-align: center;
+}

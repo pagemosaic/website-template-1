@@ -1,1 +1,1 @@
-{"PageContentData":{"S":"[]"},"SK":{"S":"PAGE_CONTENT"},"PK":{"S":"PAGE#empty"}}
+{"SitePartialContentData":{"S":"<link rel=\"stylesheet\" href=\"/_assets/css/main.css\" />\n<noscript><link rel=\"stylesheet\" href=\"/_assets/css/noscript.css\" /></noscript>\n"},"SK":{"S":"SITE_PARTIAL#head_scripts"},"PK":{"S":"SITE"},"SitePartialKey":{"S":"head_scripts"},"SitePartialLabel":{"S":"Head Scripts"}}

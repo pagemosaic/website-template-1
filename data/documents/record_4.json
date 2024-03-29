@@ -1,1 +1,1 @@
-{"SK":{"S":"ENTRY"},"EntryType":{"S":"site"},"EntryUpdateDate":{"N":"1708687095642"},"PK":{"S":"SITE"},"EntryCreateDate":{"N":"1707923900376"}}
+{"Error":{"S":""},"LastChanged":{"N":"1711700909747"},"SK":{"S":"STATUS"},"PK":{"S":"GENERATOR"},"State":{"S":"idle"},"LastRun":{"N":"1711700920697"}}

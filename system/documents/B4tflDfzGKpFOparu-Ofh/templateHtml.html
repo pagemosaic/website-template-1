@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+{% assign companyInfoBlock = site.blocks | where: 'key', 'companyInfoBlock' | first %}
+{% assign menuItemsBlock = site.blocks | where: 'key', 'menuItemsBlock' | first %}
+<html>
+	<head>
+		<title>{{ thisPage.title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{{ partials.head_scripts }}
+		{{styles}}
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<a href="/" class="logo"><strong>{{ companyInfoBlock.fields.companyName.stringValue }}</strong> <span>{{ companyInfoBlock.fields.fieldKey.stringValue }}</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							{% for menuItem in menuItemsBlock.fields.menuItem %}
+								{% assign linkedPage = site.pages[menuItem.pageId] %}
+								<li><a href="{{ linkedPage.route }}">{{ linkedPage.title }}</a></li>
+							{% endfor %}
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="/#one" class="button primary fit">Get Started</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						{% for pageBlock in thisPage.blocks %}
+							
+							{% if pageBlock.key == 'collectionHeroSection' %}
+								{% assign collectionHeroSection = pageBlock %}
+								<section id="two">
+									<div class="inner">
+										<header class="major">
+											<h2>{{ collectionHeroSection.fields.heroTitle.stringValue }}</h2>
+										</header>
+										{{ collectionHeroSection.fields.blogPostDescription.richTextValue }}
+									</div>
+								</section>
+
+							{% elsif pageBlock.key == 'blogPostsGallerySection' %}
+								{% assign blogPostsGallerySection = pageBlock %}
+									<section id="one" class="tiles">
+										{% assign blogPostsGallerySection = thisPage.blocks | where: 'key', 'blogPostsGallerySection' | first %}
+										{% for blogPostEntry in blogPostsGallerySection.fields.blogPostEntry %}
+											<article>
+												<span class="image">
+													<img src="{{ blogPostEntry.nested.image.imageSrc }}" alt="{{ blogPostEntry.nested.image.imageAlt }}" />
+												</span>
+												<header class="major">
+													{% assign linkedPage = site.pages[blogPostEntry.nested.link.pageId] %}
+													<h3><a href="{{ linkedPage.route }}" class="link">
+														{{ linkedPage.title }}
+														</a></h3>
+													<p>{{ blogPostEntry.nested.description.stringValue }}</p>
+												</header>
+											</article>	
+										{% endfor %}
+									</section>							
+							{% endif %}
+							
+						{% endfor %}
+					</div>
+					{% for siteBlock in site.blocks %}
+						
+						{% if siteBlock.key == 'contactInformationBlock' %}
+							{% assign contactInformationBlock = siteBlock %}
+							<!-- Contact -->
+							<section id="contact">
+								<div class="inner">
+									<section>
+										<form method="post" action="#">
+											<div class="fields">
+												<div class="field half">
+													<label for="name">Name</label>
+													<input type="text" name="name" id="name" />
+												</div>
+												<div class="field half">
+													<label for="email">Email</label>
+													<input type="text" name="email" id="email" />
+												</div>
+												<div class="field">
+													<label for="message">Message</label>
+													<textarea name="message" id="message" rows="6"></textarea>
+												</div>
+											</div>
+											<ul class="actions">
+												<li><input type="submit" value="Send Message" class="primary" /></li>
+												<li><input type="reset" value="Clear" /></li>
+											</ul>
+										</form>
+									</section>
+									<section class="split">
+										<section>
+											<div class="contact-method">
+												<span class="icon solid alt fa-envelope"></span>
+												<h3>Email</h3>
+												<a href="#">{{ contactInformationBlock.fields.contactEmail.stringValue }}</a>
+											</div>
+										</section>
+										<section>
+											<div class="contact-method">
+												<span class="icon solid alt fa-phone"></span>
+												<h3>Phone</h3>
+												<span>{{ contactInformationBlock.fields.contactPhone.stringValue }}</span>
+											</div>
+										</section>
+										<section>
+											<div class="contact-method">
+												<span class="icon solid alt fa-home"></span>
+												{{ contactInformationBlock.fields.contactAddress.richTextValue }}
+											</div>
+										</section>
+									</section>
+								</div>
+							</section>
+						
+
+						{% endif %}
+						
+					{% endfor %}
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								{% for contactSocialNetwork in companyInfoBlock.fields.contactSocialNetwork %}
+									<li><a href="{{ contactSocialNetwork.nested.netoworkHandleAddress.stringValue }}" class="icon brands alt {{ contactSocialNetwork.nested.networkIcon.stringValue }}"><span class="label">{{ contactSocialNetwork.nested.networkTitle.stringValue }}</span></a></li>
+								{% endfor %}
+<!-- 								
+								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li> -->
+							</ul>
+							<ul class="copyright">
+								<li>&copy; {{ companyInfoBlock.fields.copyright.stringValue }}</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+								<li>Demo Images: <a href="https://unsplash.com">Unsplash</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		{{ partials.body_scripts }}
+
+	</body>
+</html>
